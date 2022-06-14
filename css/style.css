@@ -34,7 +34,15 @@ body {
     align-content: center;
     background-color: var(--nav-color);
     padding: 0.4rem;
+    transition: all ease 0.3s;
+    z-index: 999;
+}
+
+.stiky {
+    margin: 0;
+    padding: 0.1rem;
     position: fixed;
+    transition: all ease 0.3s;
 }
 
 .brand-name {
@@ -221,7 +229,8 @@ body {
     display: block;
 }
 
-.project > p, .project > h2 {
+.project>p,
+.project>h2 {
     display: none;
 }
 
@@ -239,9 +248,16 @@ body {
 }
 
 @keyframes modal {
-    0% {transform: translateY(-100px); opacity: 0;}
-    100% {transform: translateY(0); opacity: 1;}
-    
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
 }
 
 
@@ -274,6 +290,7 @@ body {
     border-radius: 1rem;
     font-size: 50px;
 }
+
 .modal-close-icon {
     align-self: flex-end;
     background-color: inherit;
@@ -291,6 +308,7 @@ body {
 i {
     margin-right: 5px;
 }
+
 .modal-close-btn {
     font-size: 20px;
     background-color: var(--color-primary);
@@ -323,7 +341,7 @@ i {
     text-align: center;
 }
 
-.modal-body > p {
+.modal-body>p {
     color: var(--const-color);
     max-width: 50%;
     max-height: 90px;
@@ -340,4 +358,147 @@ i {
 
 #modalTitle {
     text-transform: uppercase;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    gap: var(--gap);
+    padding: 50px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.about-text {
+    max-width: 50%;
+    overflow: auto;
+    text-align: left;
+    text-overflow: ellipsis;
+    color: var(--const-color);
+}
+
+.download-btn {
+    font-size: 1.2rem;
+    background-color: inherit;
+    color: var(--const-color);
+    border: 1px solid var(--const-color);
+    margin-top: 2.5rem;
+    transition: all ease 0.3s;
+    outline: none;
+    border-radius: 0.5rem;
+}
+
+.download-btn:hover {
+    background-color: var(--const-color);
+    color: var(--nav-color);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    padding: 50px;
+    width: 100%;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    justify-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 50%;
+
+}
+
+input {
+    padding: 20px 0;
+    outline: none;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--nav-color);
+    font-size: 20px;
+}
+
+.form-item {
+    width: 100%;
+}
+
+textarea {
+    max-width: 100%;
+    min-width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--nav-color);
+    outline: none;
+    min-height: 100px;
+    font-size: 20px;
+    padding: 15px 0;
+}
+
+.submit-btn {
+    width: 15%;
+    font-size: 20px;
+    background-color: var(--color-primary);
+    color: var(--const-color);
+    border-radius: 0.5rem;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.label {
+    position: absolute;
+    font-size: 20px;
+    top: 15px;
+    
+}
+
+.label.active {
+    animation: label ease 0.5s;
+    font-size: 15px;
+    top: 0;
+}
+
+@keyframes label{
+    0% {top: 20px; font-size: 20px;}
+    50% {top: 0; font-size: 15px;}
 }
