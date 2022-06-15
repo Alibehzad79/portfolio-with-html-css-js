@@ -1,5 +1,6 @@
 * {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -35,7 +36,7 @@ body {
     background-color: var(--nav-color);
     padding: 0.4rem;
     transition: all ease 0.3s;
-    z-index: 999;
+    z-index: 19;
 }
 
 .stiky {
@@ -67,7 +68,11 @@ body {
     border-radius: 0.5rem;
     outline: none;
     transition: all ease 0.2s;
-    cursor: pointer;
+    color: var(--const-color);
+    text-decoration: none;
+    transition: all ease 0.2s;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .nav-link {
@@ -76,6 +81,7 @@ body {
     transition: all ease 0.2s;
     text-transform: uppercase;
     font-weight: 600;
+    /* background-color: red; */
 }
 
 .nav-item:hover .nav-link {
@@ -183,6 +189,7 @@ body {
     justify-items: center;
     flex-wrap: wrap;
     transition: all ease 0.3s;
+    padding: 150px;
 }
 
 .project {
@@ -235,7 +242,7 @@ body {
 }
 
 .modal {
-    width: 100%;
+    width: 50%;
     height: 100%;
     display: none;
     justify-content: center;
@@ -243,6 +250,7 @@ body {
     align-content: center;
     justify-items: center;
     z-index: 20;
+    top: 10%;
     position: absolute;
     animation: modal 0.5s alternate;
 }
@@ -276,10 +284,10 @@ body {
     opacity: 1 !important;
     border-radius: 1rem;
     background-color: var(--nav-color);
-    width: 80%;
-    height: 90%;
+    width: 100%;
+    height: 70%;
     padding: 20px;
-    margin: 0;
+    margin-top: 10%;
 }
 
 .btn {
@@ -370,7 +378,7 @@ i {
     justify-items: center;
     align-content: center;
     gap: var(--gap);
-    padding: 50px;
+    padding: 150px;
 }
 
 .row {
@@ -385,7 +393,7 @@ i {
 }
 
 .about-text {
-    max-width: 50%;
+    max-width: 100%;
     overflow: auto;
     text-align: left;
     text-overflow: ellipsis;
@@ -416,7 +424,7 @@ i {
     justify-items: center;
     align-items: center;
     align-content: center;
-    padding: 50px;
+    padding: 150px;
     width: 100%;
 }
 
@@ -501,4 +509,82 @@ textarea {
 @keyframes label{
     0% {top: 20px; font-size: 20px;}
     50% {top: 0; font-size: 15px;}
+}
+
+.footer {
+    background-color: var(--nav-color);
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: flex-start;
+    align-content: center;
+    gap: var(--gap);
+    padding: 50px;
+    flex-wrap: wrap;
+}
+.footer > div {
+    text-align: center;
+    height: 250px;
+    overflow: auto;
+}
+.location-title {
+    font-size: 25px;
+}
+
+.loaction-content {
+    font-size: 20px;
+    color: var(--const-color);
+}
+
+.socail-nav-item {
+    border: 1px solid var(--const-color);
+    border-radius: 50%;
+    text-align: center;
+}
+
+.socail-nav-item > a {
+    text-align: center;
+}
+.socail-nav-item > a > i {
+    font-size: 30px;
+    color: var(--const-color);
+    width: 100%;
+} 
+
+.socail-nav-item:hover {
+    background-color: var(--const-color);
+} 
+
+
+.socail-nav-item:hover > a > i {
+    color: rgb(0, 0, 0);
+} 
+
+.about-title {
+    font-size: 25px;
+}
+
+.about-content {
+    color: var(--const-color);
+    overflow: auto;
+}
+
+.about-content > a {
+    text-decoration: underline;
+    color: var(--color-primary);
+}
+
+.copy-right {
+    background-color: #131b24;
+    width: 100%;
+    text-align: center;
+}
+.copy-text {
+    color: var(--const-color);
+    font-size: 15px;
+}
+
+.clear {
+    clear: both;
 }

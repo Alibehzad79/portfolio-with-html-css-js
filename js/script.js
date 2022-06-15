@@ -6,14 +6,15 @@ function modal() {
     let modalTitle = document.querySelector('#modalTitle');
     projects.forEach(project => {
         project.addEventListener('click', () => {
+            let windowHeight = window.innerHeight;
+            console.log(windowHeight)
             modal.classList.add('active')
             if (modal.classList.contains('active')) {
-                document.querySelector('#project_1').scrollIntoView();
+                modal.querySelector('.modal-content').style.position = 'absolute';
+                document.querySelector('#portfolio').scrollIntoView();
                 modalImage.src = project.querySelector('img').src;
                 modalContent.innerHTML = project.querySelector('p').innerHTML;
                 modalTitle.innerHTML = project.querySelector('h2').innerHTML;
-                document.body.style.overflow = 'hidden';
-                document.body.style.userSelect = 'none';
             }
         }
         )
@@ -39,17 +40,28 @@ function navStiky() {
         }
     })
 }
-
 navStiky();
 
-// function navItemActive() {
-//     let portfolio = document.querySelector('#portfolio');
-//     if (window.scrollIntoView() == portfolio) {
-//         document.querySelector('#navbar').querySelector('#portfolio').classList.add('active')
-//     }
-// }
 
-// navItemActive();
+function navItemActive() {
+    let navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            item.classList.add('active');
+            navItems.forEach(oldItem => {
+                if (oldItem != item) {
+                    oldItem.classList.remove('active');
+                }
+            })
+        })
+    })
+
+
+}
+
+navItemActive();
+
+
 
 function formAnimation() {
     let formItems = document.querySelectorAll('.form-item');

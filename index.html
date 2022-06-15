@@ -20,8 +20,8 @@
             <div class="nav">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="#portfolio" class="nav-link">Protfolio</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -39,9 +39,9 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="slide portfolio">
-            <div class="title portfolio-title" id="portfolio">portfolio</div>
+    <div class="container" >
+        <div class="slide portfolio" id="portfolio">
+            <div class="title portfolio-title" >portfolio</div>
             <div class="clear-fix portfolio-clear-fix"><i class="ri-star-fill portfolio-star"></i></div>
             <div class="projects" id="project_1">
                 <div class="project">
@@ -107,8 +107,8 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="about">
+    <div class="container" >
+        <div class="about" id="about">
             <div class="title">About</div>
             <div class="clear-fix slide-clear-fix"><i class="ri-star-fill slide-star"></i></div>
             <div class="row">
@@ -126,12 +126,14 @@
     </div>
 
     <div class="container">
-        <div class="contact">
+        <div class="contact" id="contact">
+            <div class="clear"></div>
             <div class="title portfolio-title">Contact Me</div>
+            
             <div class="clear-fix portfolio-clear-fix"><i class="ri-star-fill portfolio-star"></i></div>
             <div class="form-div">
                 <form action="#" class="form">
-                    
+
                     <div class="form-item">
                         <label for="full-name" class="label">Full name</label>
                         <input type="text" name="full-name" required id="fullName" class="form-input text-input">
@@ -142,7 +144,8 @@
                     </div>
                     <div class="form-item">
                         <label for="phone-number" class="label">Phone number</label>
-                        <input type="text" name="phone-number" required id="phoneNumber" class="form-input number-input" >
+                        <input type="text" name="phone-number" required id="phoneNumber"
+                            class="form-input number-input">
                     </div>
                     <div class="form-item">
                         <label for="message" class="label">Message</label>
@@ -156,18 +159,29 @@
 
     <div class="container">
         <div class="footer">
-            <div class="location">Iran Ardabil</div>
-            <div class="social">
-                <ul>
-                    <li><i></i></li>
-                    <li><i></i></li>
-                    <li><i></i></li>
-                    <li><i></i></li>
-                    <li><i></i></li>
-                </ul>
+            <div class="location">
+                <h2 class="title location-title">Loaction</h2>
+                <p class="loaction-content">Iran - Azerbaijan - Ardabil city</p>
             </div>
-            <div class="site-about">my name is ali behzad</div>
+            <div class="social">
+                <h2 class="title location-title">around the web</h2>
+                <div class="nav social-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item socail-nav-item"><a href="#" class="nav-link"><i class="ri-facebook-line"></i></a></li>
+                        <li class="nav-item socail-nav-item"><a href="#" class="nav-link"><i class="ri-twitter-line"></i></a></li>
+                        <li class="nav-item socail-nav-item"><a href="#" class="nav-link"><i class="ri-linkedin-line"></i></a></li>
+                        <li class="nav-item socail-nav-item"><a href="#" class="nav-link"><i class="ri-instagram-line"></i></a></li>
+                        <li class="nav-item socail-nav-item"><a href="#" class="nav-link"><i class="ri-telegram-fill"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-about">
+                <h2 class="title about-title">about yout site</h2>
+                <p class="location-content about-content">Your site is free and open source project, created by <a href="https://instagram.com/py.d.d/" target="_blank" class="creator">Ali Behzad</a></p>
+            </div>
         </div>
+    </div>
+    <div class="container">
         <div class="copy-right">
             <p class="copy-text">Copyright © Ali Behzad 2022</p>
         </div>
