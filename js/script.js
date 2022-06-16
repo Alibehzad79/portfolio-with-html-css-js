@@ -1,20 +1,28 @@
+// Created By Ali Behzad 
 function modal() {
     let modal = document.querySelector('#modal');
     let projects = document.querySelectorAll('.project');
     let modalImage = document.querySelector('#modalImage');
     let modalContent = document.querySelector('#modalContent');
     let modalTitle = document.querySelector('#modalTitle');
+    function getHeight() {
+        return Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight,
+            document.documentElement.clientHeight
+        );
+    }
     projects.forEach(project => {
         project.addEventListener('click', () => {
-            let windowHeight = window.innerHeight;
-            console.log(windowHeight)
             modal.classList.add('active')
             if (modal.classList.contains('active')) {
-                modal.querySelector('.modal-content').style.position = 'absolute';
-                document.querySelector('#portfolio').scrollIntoView();
                 modalImage.src = project.querySelector('img').src;
                 modalContent.innerHTML = project.querySelector('p').innerHTML;
                 modalTitle.innerHTML = project.querySelector('h2').innerHTML;
+                document.body.style.overflow = 'hidden';
+                document.body.style.userSelect('none')
             }
         }
         )
@@ -31,12 +39,15 @@ function closeModal() {
 }
 
 function navStiky() {
-    let navbar = document.querySelector('#navbar');
+    const navbar = document.querySelector('#navbar');
+    const navbarSm = document.querySelector('#navbarSm');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
             navbar.classList.add('stiky')
+            navbarSm.classList.add('stiky')
         } else {
             navbar.classList.remove('stiky')
+            navbarSm.classList.remove('stiky')
         }
     })
 }
@@ -86,3 +97,16 @@ function formAnimation() {
 }
 
 formAnimation();
+
+
+function navbarSmActive() {
+    const navbarSm = document.querySelector('#navbarSm');
+    const navbarBtn = document.querySelector('#menuBtn');
+    const navbarMenu = document.querySelector('#navMenu');
+    navbarBtn.addEventListener('click', () => {
+        navbarSm.classList.toggle('active');
+        navbarMenu.classList.toggle('active')
+    })
+}
+
+navbarSmActive();

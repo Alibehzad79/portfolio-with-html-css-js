@@ -1,3 +1,5 @@
+/* Created By Ali Behzad */
+
 * {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     scroll-behavior: smooth;
@@ -44,6 +46,8 @@ body {
     padding: 0.1rem;
     position: fixed;
     transition: all ease 0.3s;
+    width: 100%;
+
 }
 
 .brand-name {
@@ -81,7 +85,6 @@ body {
     transition: all ease 0.2s;
     text-transform: uppercase;
     font-weight: 600;
-    /* background-color: red; */
 }
 
 .nav-item:hover .nav-link {
@@ -105,8 +108,9 @@ body {
     justify-items: center;
     align-items: center;
     align-content: center;
-    height: 43rem;
     gap: var(--gap);
+    height: auto;
+    padding: 1rem;
 }
 
 .img {
@@ -161,7 +165,7 @@ body {
 
 .portfolio {
     background-color: var(--const-color);
-    padding: 5rem;
+    padding: 5rem 1rem;
     width: 100%;
     height: 100%;
     position: relative;
@@ -189,7 +193,6 @@ body {
     justify-items: center;
     flex-wrap: wrap;
     transition: all ease 0.3s;
-    padding: 150px;
 }
 
 .project {
@@ -250,8 +253,8 @@ body {
     align-content: center;
     justify-items: center;
     z-index: 20;
-    top: 10%;
-    position: absolute;
+    top: 0;
+    position: fixed;
     animation: modal 0.5s alternate;
 }
 
@@ -288,6 +291,7 @@ body {
     height: 70%;
     padding: 20px;
     margin-top: 10%;
+    position: absolute;
 }
 
 .btn {
@@ -378,7 +382,7 @@ i {
     justify-items: center;
     align-content: center;
     gap: var(--gap);
-    padding: 150px;
+    padding: 5rem 1rem;
 }
 
 .row {
@@ -424,8 +428,8 @@ i {
     justify-items: center;
     align-items: center;
     align-content: center;
-    padding: 150px;
     width: 100%;
+    padding: 5rem 1rem;
 }
 
 .form-div {
@@ -476,11 +480,12 @@ textarea {
 }
 
 .submit-btn {
-    width: 15%;
+    width: 25%;
     font-size: 20px;
     background-color: var(--color-primary);
     color: var(--const-color);
     border-radius: 0.5rem;
+    margin-top: 10px;
 }
 
 .submit-btn:hover {
@@ -497,7 +502,7 @@ textarea {
     position: absolute;
     font-size: 20px;
     top: 15px;
-    
+
 }
 
 .label.active {
@@ -506,9 +511,16 @@ textarea {
     top: 0;
 }
 
-@keyframes label{
-    0% {top: 20px; font-size: 20px;}
-    50% {top: 0; font-size: 15px;}
+@keyframes label {
+    0% {
+        top: 20px;
+        font-size: 20px;
+    }
+
+    50% {
+        top: 0;
+        font-size: 15px;
+    }
 }
 
 .footer {
@@ -520,14 +532,10 @@ textarea {
     align-items: flex-start;
     align-content: center;
     gap: var(--gap);
-    padding: 50px;
+    padding: 5rem 0;
     flex-wrap: wrap;
 }
-.footer > div {
-    text-align: center;
-    height: 250px;
-    overflow: auto;
-}
+
 .location-title {
     font-size: 25px;
 }
@@ -537,29 +545,31 @@ textarea {
     color: var(--const-color);
 }
 
+
 .socail-nav-item {
     border: 1px solid var(--const-color);
     border-radius: 50%;
     text-align: center;
 }
 
-.socail-nav-item > a {
+.socail-nav-item>a {
     text-align: center;
 }
-.socail-nav-item > a > i {
+
+.socail-nav-item>a>i {
     font-size: 30px;
     color: var(--const-color);
     width: 100%;
-} 
+}
 
 .socail-nav-item:hover {
     background-color: var(--const-color);
-} 
+}
 
 
-.socail-nav-item:hover > a > i {
+.socail-nav-item:hover>a>i {
     color: rgb(0, 0, 0);
-} 
+}
 
 .about-title {
     font-size: 25px;
@@ -570,7 +580,7 @@ textarea {
     overflow: auto;
 }
 
-.about-content > a {
+.about-content>a {
     text-decoration: underline;
     color: var(--color-primary);
 }
@@ -580,6 +590,7 @@ textarea {
     width: 100%;
     text-align: center;
 }
+
 .copy-text {
     color: var(--const-color);
     font-size: 15px;
@@ -587,4 +598,321 @@ textarea {
 
 .clear {
     clear: both;
+}
+
+.navbar-sm {
+    display: none;
+    background-color: var(--nav-color);
+    justify-content: space-between;
+    justify-items: flex-start;
+    align-items: flex-start;
+    align-content: space-between;
+    z-index: 19;
+    padding: 0.6rem;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.navbar-menu,
+.menu-btn {
+    display: none;
+
+}
+
+.menu-btn {
+    font-size: 12px;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: var(--color-primary);
+    color: var(--const-color);
+}
+
+.nav-menu {
+    display: none;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .navbar-sm {
+        display: flex;
+        width: 100%;
+        align-content: center;
+    }
+
+    .stiky {
+        justify-content: space-around;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar-sm.active {
+        animation: navbarSm ease 1s;
+        height: 300px;
+    }
+
+    @keyframes navbarSm {
+        0% {
+            height: 100px;
+        }
+
+        100% {
+            height: 300px;
+            top: 0;
+        }
+    }
+
+    .brand-name {
+        font-size: 20px;
+    }
+
+    .navbar-menu,
+    .menu-btn {
+        display: inline;
+    }
+
+    .nav-menu-list {
+        animation: nav-menu ease 2.5s;
+    }
+
+    @keyframes nav-menu {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            ;
+        }
+    }
+
+    .nav-menu.active {
+        flex-direction: column;
+        display: flex;
+
+    }
+
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .slide {
+        flex-direction: column;
+    }
+
+    .portfolio {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .projects {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .project {
+        width: 100%;
+    }
+
+    .modal {
+        padding: 0;
+        height: 50%;
+        width: 90%;
+        gap: 0;
+        margin: 0;
+    }
+
+    .modal-content {
+        gap: 0;
+        padding: 0 10px;
+        margin: 0;
+        justify-content: space-around;
+        justify-items: center;
+        align-items: center;
+        align-content: space-around;
+        height: 600px;
+        top: 5rem;
+    }
+
+    #modalContent {
+        overflow: visible;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .row {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        justify-items: center;
+    }
+
+    .contact {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .clear-fix {
+        font-size: 10px;
+    }
+
+    .form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .social-nav {
+        flex-direction: column;
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .socail-nav-item {
+        border-radius: 0;
+    }
+
+    .site-about,
+    .location,
+    .social {
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .project {
+        width: 35%;
+    }
+    .modal {
+        width: 90%;
+    }
+    .about {
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .row {
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact {
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .form-div {
+        align-items: flex-start;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .project {
+        width: 25%;
+    }
+
+    .about {
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .row {
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact {
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .form-div {
+        width: 50%;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }
