@@ -645,12 +645,14 @@ textarea {
         display: flex;
         width: 100%;
         align-content: center;
+        align-items: baseline;
     }
 
     .stiky {
         justify-content: space-around;
+        justify-items: center;
         width: 100%;
-        padding: 0;
+        padding: 1rem;
     }
 
     .navbar-sm.active {
